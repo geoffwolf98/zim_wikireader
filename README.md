@@ -12,13 +12,13 @@ Supplied :-
 - Download wikipedia_en_all_nopic_*zim from  https://download.kiwix.org/zim/wikipedia/
 - Seems to lag behind database backup by 1 to 2 months, I assume the processing required is immense given they do all the other zims too.
 
-mkdir OUTPUT2
+`mkdir OUTPUT2`
 
 - This chokes so that only 70 processes extract.py run at once, and suspends the others
 - I have a x99 board with 72 processes on it, so it runs lovely... ymmv
 - I need to implement python queuing when I've learnt it
 
-perl watcher.pl &
+`perl watcher.pl &`
 
 
 - So this takes the zim file, and sequentially processes each page, each page is html, but with lots of extra formatting that is not needed and bloats/breaks the wikireader build
@@ -38,20 +38,20 @@ perl watcher.pl &
 
 - The below assembles it into on ~50gb file
 
-cd OUTPUT2
+`cd OUTPUT2`
 
-cat \`ls *.wiki | sort -R | xargs echo\` > full.txt
+`cat \`ls *.wiki | sort -R | xargs echo\` > full.txt`
 
 - Now do some tidying, as some articles still "break" wikireader build (usually to do with utf8 corruption).  Seems to vary between extracts
 
-cat full.txt | grep -v "^    This article is issued from Wikipedia. The text is licensed under Creative Commons - Attribution - Sharealike. Additional terms may apply for the media files." |  perl filter_out.pl |  perl duplicate.pl |  perl remove.pl >> enwiki.xml
+`cat full.txt | grep -v "^    This article is issued from Wikipedia. The text is licensed under Creative Commons - Attribution - Sharealike. Additional terms may apply for the media files." |  perl filter_out.pl |  perl duplicate.pl |  perl remove.pl >> enwiki.xml`
 
 - Now feed enwiki.xml into the wikireader-master build process as normal
 
 i.e.
 
-export PATH=$PATH:/u01/WIKI/BUILD/wikireader-master/scripts/
+`export PATH=$PATH:/u01/WIKI/BUILD/wikireader-master/scripts/
 ./scripts/Run --verbose --machines=1 --parallel=64 --farm=1 en:::NO::::
 
-make WORKDIR=work DESTDIR=image combine install
+make WORKDIR=work DESTDIR=image combine install`
 

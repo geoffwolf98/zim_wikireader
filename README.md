@@ -40,7 +40,7 @@ Supplied :-
 
 `cd OUTPUT2`
 
-cat \`ls *.wiki | sort -R | xargs echo\` > full.txt
+`cat \`ls *.wiki | sort -R | xargs echo\` > full.txt`
 
 - Now do some tidying, as some articles still "break" wikireader build (usually to do with utf8 corruption).  Seems to vary between extracts
 
@@ -51,6 +51,7 @@ cat \`ls *.wiki | sort -R | xargs echo\` > full.txt
 i.e.
 
 `export PATH=$PATH:/u01/WIKI/BUILD/wikireader-master/scripts/`
+
 `./scripts/Run --verbose --machines=1 --parallel=64 --farm=1 en:::NO::::`
 
 `make WORKDIR=work DESTDIR=image combine install`

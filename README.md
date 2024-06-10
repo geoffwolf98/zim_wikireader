@@ -38,6 +38,7 @@ python3 extract.py wikipedia_en_all_nopic_2024-04.zim 1024 2024-04
 - The below assembles it into on ~50gb file
 
 cd OUTPUT2
+
 cat `ls *.wiki | sort -R | xargs echo` > full.txt
 
 - Now do some tidying, as some articles still "break" wikireader build (usually to do with utf8 corruption).  Seems to vary between extracts

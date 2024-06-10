@@ -50,8 +50,8 @@ cat \`ls *.wiki | sort -R | xargs echo\` > full.txt
 
 i.e.
 
-`export PATH=$PATH:/u01/WIKI/BUILD/wikireader-master/scripts/
-./scripts/Run --verbose --machines=1 --parallel=64 --farm=1 en:::NO::::
+`export PATH=$PATH:/u01/WIKI/BUILD/wikireader-master/scripts/`
+`./scripts/Run --verbose --machines=1 --parallel=64 --farm=1 en:::NO::::`
 
-make WORKDIR=work DESTDIR=image combine install`
+`make WORKDIR=work DESTDIR=image combine install`
 

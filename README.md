@@ -28,11 +28,11 @@ Supplied :-
 
 `python3 extract.py wikipedia_en_all_nopic_2024-04.zim 1024 2024-04`
 
-	Parameters 
+Parameters 
 		ZIM file
 		Number of workers
 		File_name
-
+  
 - This creates 1024 "chunks" of files, because they get bigger when processed sequentially - due to how origianl wikipedia was built -
 - ends up with 1 or 2 processes taking many more times than the average.  Hence the "sort -R" below makes it random and mostly makes each stream roughly the same size.
 

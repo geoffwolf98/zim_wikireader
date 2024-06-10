@@ -14,15 +14,16 @@ Seems to lag behind database backup by 1 to 2 months, I assume the processing re
 
 mkdir OUTPUT2
 
-# This chokes so that only 70 processes extract.py run at once, and suspends the others 
-# I need to implement python queuing when I've learnt it
+_This chokes so that only 70 processes extract.py run at once, and suspends the others _
+_I need to implement python queuing when I've learnt it_
 
 perl watcher.pl &
 
 
-# So this takes the zim file, and sequentially processes each page, each page is html, but with lots of extra formatting that is not needed and bloats/breaks the wikireader build
-# so it filters it out the best it can
-# Apologies for awful python code
+_So this takes the zim file, and sequentially processes each page, each page is html, but with lots of extra formatting that is not needed and bloats/breaks the wikireader build
+so it filters it out the best it can
+Apologies for awful python code
+_
 
 python3 extract.py wikipedia_en_all_nopic_2024-04.zim 1024 2024-04
 	Parameters 

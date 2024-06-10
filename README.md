@@ -40,7 +40,7 @@ Supplied :-
 
 `cd OUTPUT2`
 
-``cat \`ls *.wiki | sort -R | xargs echo\` > full.txt``
+``cat `ls *.wiki | sort -R | xargs echo` > full.txt``
 
 - Now do some tidying, as some articles still "break" wikireader build (usually to do with utf8 corruption).  Seems to vary between extracts
 

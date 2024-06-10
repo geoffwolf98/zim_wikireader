@@ -14,8 +14,9 @@ Supplied :-
 
 mkdir OUTPUT2
 
-- This chokes so that only 70 processes extract.py run at once, and suspends the others _
-- I need to implement python queuing when I've learnt it_
+- This chokes so that only 70 processes extract.py run at once, and suspends the others
+- I have a x99 board with 72 processes on it, so it runs lovely... ymmv
+- I need to implement python queuing when I've learnt it
 
 perl watcher.pl &
 

@@ -26,7 +26,7 @@ perl watcher.pl &
 - Apologies for awful python code
 
 
-python3 extract.py wikipedia_en_all_nopic_2024-04.zim 1024 2024-04
+`python3 extract.py wikipedia_en_all_nopic_2024-04.zim 1024 2024-04`
 	Parameters 
 		ZIM file
 		Number of workers
